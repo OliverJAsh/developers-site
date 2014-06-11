@@ -6,6 +6,7 @@
     "github:ded/reqwest": "^1.1.0",
     "npm:ejs": "^1.0.0",
     "github:systemjs/plugin-text": "master",
-    "moment": "^2.6.0"
+    "moment": "^2.6.0",
+    "npm:blueimp-md5": "^1.1.0"
   }
 }

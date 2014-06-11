@@ -1,6 +1,7 @@
 import moment from 'moment';
 import reqwest from 'github:ded/reqwest';
 import ejs from 'npm:ejs';
+import bar from 'npm:blueimp-md5';
 // FIXME: Must be last. Why?
 import template from '../enhanced-views/developer-blog-section.ejs!github:systemjs/plugin-text';
 
@@ -28,12 +29,14 @@ var urlParameters = constructURLQueryParameters({
 });
 var url = 'http://content.guardianapis.com/search?' + urlParameters;
 
+
 reqwest({
     // TODO: API key
     url: url,
     type: 'jsonp'
 }).then(function (response) {
     console.log(1, response.response.results);
+    console.log(bar.md5);
     var renderedElement = renderTemplate(template, {
         articles: response.response.results,
         formatDate: function (dateString) {
